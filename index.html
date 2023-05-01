@@ -16,6 +16,12 @@
   <a href="https://github.com/RamonRossello/08MBID---Visualizacion-de-Datos" target="_blank">
     https://github.com/RamonRossello/08MBID---Visualizacion-de-Datos
   </a>
+  <br />
+  <span class="negrita">Fuente de datos:</span> 
+  <br />
+  <span class="negrita">Código de Google Colab de Minería de Datos:</span> 
+  <br />
+  <span class="negrita">Código de Google Colab de la práctica:</span> 
   <h1> Accidentes de tráfico y su tiempo de afectación</h1>
   <h2> Introducción</h2>
   <h3> Contexto y objetivo</h3>
@@ -164,5 +170,38 @@ Finalmente, pretendemos deducir si el periodo del día (día o noche) o el hecho
 Fijémonos que las cuatro cajas (formadas por el primer cuartil, la mediana y el tercer cuartil) se sitúan de forma muy parecida en cada caso, aunque parece que, en caso de ser fin de semana, la mediana y el tercer cuartil de los tiempos de afectación son timídamente menores, al igual que los máximos de las bisagras de Tukey, adando a entender que en caso de ser fin de semana, el tiempo medio de afectación es ligeramente inferior (aunque son diferencias prácticamente insignifactivas). De igual forma, en caso de producirse de noche, también parece que los tiempos medios de afectación son suavemente menores en comparación a los que se producen de día. Sin embargo, ninguna de estas diferencias se presenta de forma clara, por lo que deducimos que no son factores que tengan una afectación destacable en el tiempo medio de afectación en el tráfico provocado por un accidente. 
 <br>
 <br>
-En definitiva, mediante la visualización de los diferentes gráficos hemos visto que la gravedad del accidente influye notablemente en el tiempo mínimo de afectación en el tráfico provocado por un accidente y la distancia de la zona afectada también presenta una suave correlación lineal positiva con el tiempo de afectación (sobre todo a valores muy altos), por lo que serían atributos a considerar por los responsables de la Administración y Dirección de Tráfico a la hora de actuar ante nuevos accidentes. Por otro lado, las demás variables contínuas (humedad, sensación térmica, visibilidad y velicidad del viento),el periodo del día o el hecho de que sea fin de semana no están estrechamente relacionadas con el tiempo de afectación de los accidentes, por lo que no serían características de lso que nuestra audiencia debería tomar conciencia. 
+En definitiva, mediante la visualización de los diferentes gráficos hemos visto que la gravedad del accidente influye notablemente en el tiempo mínimo de afectación en el tráfico provocado por un accidente y la distancia de la zona afectada también presenta una suave correlación lineal positiva con el tiempo de afectación (sobre todo a valores muy altos), por lo que serían atributos a considerar por los responsables de la Administración y Dirección de Tráfico a la hora de actuar ante nuevos accidentes. Por otro lado, las demás variables contínuas (humedad, sensación térmica, visibilidad y velicidad del viento), el periodo del día o el hecho de que sea fin de semana no están estrechamente relacionadas con el tiempo de afectación de los accidentes, por lo que no serían características de las que nuestra audiencia debería tomar conciencia. 
+<h2> Conclusiones</h2>
+Con todas las visualizaciones realziadas en la práctica, se ha podido establecer de forma clara los factores que más afectan al tiempo medio de afectación de una zona de tráfico provocado por un accidente en DC (Washington D. C.), WV (Virginia Occidental) e IA (Iowa) a lo largo de 2021 con condiciones "comunes", de forma que deberían ser factores a tener en cuenta por los Responsables de la Administración y Dirección de Tráfico de los Estados Unidos a la hora de estimar el tiempo de afectación en el tráfico de un determinado accidente e informar a la sociedad. El resumen de dichos atributos son los siguientes: 
+<ul>
+  <li>La zona geográfica (el estado y el condado) de cada uno de los accidentes.</li>
+  <li>El mes y la estación del año en el que se ha producido el accidente. </li>
+  <li>La gravedad del accidente (influye en el tiempo mínimo de afectación). </li>
+  <li>La distancia de la zona afectada (sobre todo distancias altas).</li>
+</ul>
+
+Por otra parte, otros atributos como la humedad, la sensación térmica, la visibilidad, la velicidad del viento, el periodo del día o el hecho de que sea fin de semana no están significativamente relacionadas con el tiempo de afectación de los accidentes, por lo que no tendrían especial consideración por parte de los Responsables de la Administración y Dirección de Tráfico. 
+<h2> Gráficos empleados</h2>
+<span class="negrita">Google SpreadSheet</span>: programa de hoja de cálculo incluido como parte del paquete gratuito de editores de documentos de Google basado en la web que ofrece Google. Se ha usado para el diseño de los  siguientes gráficos.
+<ul>
+  <li>El primer gráfico de sectores que muestra la distribución de los accidentes por cada año.</li>
+  <li>El gráfico de columnas que muestra la evolución del tiempo medio de afectación a causa de un accidente a lo largo de los 4 trimestres y diferenciado por estado</li>
+</ul>
+<span class="negrita">Data Wrapper</span>: plataforma orientada a la edición de gráficas con ciertas limitaciones. Se ha usado para el diseño de los  siguientes gráficos.
+<ul>
+  <li>El mapa que muestra la división de los accidentes por condado.</li>
+  <li>El gráfico de líneas que muestra la evolución del tiempo medio de afectación a causa de un accidente a lo largo de los meses y diferenciado por estado (3 líneas)</li>
+</ul>
+<span class="negrita">Google Colab Python</span>: es un producto de Google Research que permite a cualquier usuario escribir y ejecutar código arbitrario de Python en el navegador. Se ha usado tanto para realizar los correspondientes tratamientos y procesos en el data set que han permitido su descraga y visualización en otras herramientas como para mostrar los gráficos siguientes.
+<ul>
+  <li>Los dos Diagramas de caja mostrados para el tiempo medio de afectación para visualizar sus outliers.</li>
+  <li>El mapa de correlaciones entre las variables contínuas y el tiempo medio de afectación, así como el ScatterPlot entre la distancia y el tiempo de afectación de un accidente. </li>
+  <li>El conjunto de Diagramas de Caja pintados diferenciando por período de día y el hecho de ser fin de semana. </li>
+</ul>
+<span class="negrita">D3Plus</span>: herramienta especialmente diseñada para trabajar con datos dinámicos o
+visualizaciones interactivas desde Stackblitz. Se ha usado para el diseño de los  siguientes gráficos.
+<ul>
+  <li>El diagrama de cajas correspondiente a la distribución del tiempo de afectación de los accidentes dividido por la gravedad.</li>
+</ul>
+
 </div>
