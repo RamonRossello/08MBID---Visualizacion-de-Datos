@@ -18,30 +18,41 @@
   </a>
   <br />
   <span class="negrita">Fuente de datos:</span> 
+  <a href="https://www.kaggle.com/datasets/sobhanmoosavi/us-accidents?resource=download" target="_blank">
+    https://www.kaggle.com/datasets/sobhanmoosavi/us-accidents?resource=download
+  </a>
   <br />
-  <span class="negrita">Código de Google Colab de Minería de Datos:</span> 
+  <span class="negrita">Cuaderno de Google Colab de Minería de Datos:</span> 
+  <a href="https://drive.google.com/file/d/1vyuLHP9J-20xPVPVV5W0MCZ1v1dnWivg/view?usp=sharing" target="_blank">
+    https://drive.google.com/file/d/1vyuLHP9J-20xPVPVV5W0MCZ1v1dnWivg/view?usp=sharing
+  </a>
   <br />
-  <span class="negrita">Código de Google Colab de la práctica:</span> 
+  <span class="negrita">Cuaderno de Google Colab de la práctica:</span> 
+  <a href="https://colab.research.google.com/drive/1GYHXtQD2b-nVxwe4sZTlNlda9Zm4-Gh0?usp=sharing" target="_blank">
+    https://colab.research.google.com/drive/1GYHXtQD2b-nVxwe4sZTlNlda9Zm4-Gh0?usp=sharing
+  </a>
   <h1> Accidentes de tráfico y su tiempo de afectación</h1>
   <h2> Introducción</h2>
-  <h3> Contexto y objetivo</h3>
 Es una obviedad que en el día a día tenemos que hacer uso de diferentes medios de
 transporte para desplazarnos en nuestra localidad, hecho que conlleva
 implícitamente la presencia de una gran cantidad de tráfico en las distintas carreteras,
 provocando multitud de accidentes que derivan en múltiples atascos generados
-diariamente. Concretamente, Estados Unidos es una de las zonas más afectadas al disponer de la mayor cantidad de vehículos en el mundo en circulación, tal y como indica la agencia de marketing digital Hedges & Company, colaboradora de Google. 
+diariamente. Concretamente, Estados Unidos es una de las zonas más afectadas al disponer de la mayor cantidad de vehículos en el mundo en circulación, tal y como indica la agencia de marketing digital Hedges & Company, colaboradora de Google, en <a href="https://motor.elpais.com/actualidad/cuantos-coches-hay-en-el-mundo-en-circulacion/" target="_blank">
+  https://motor.elpais.com/actualidad/cuantos-coches-hay-en-el-mundo-en-circulacion/
+</a>. 
 
-<h3> Elementos de la visualización</h3>
-En la asignatura cursada de Minería de Datos, se estableció inicialmente el propósito de, a partir del uso de los datos adecuados, facilitar una herramienta y un conjunto de técnicas que permita a los responsables de Tráfico de los Estados Unidos informar correctamente del tiempo en el que el tráfico de una determinada zona se verá afectado u obstaculizado a causa de un accidente. De esta forma, en sincronancia con lo indicado anteriormente, el objetivo principal de esta práctica es entender y visualizar de forma gráfica qué factores afectan y caracterizan al tiempo medio de afectación de una zona de los Estados Unidos derivado por los accidentes de tráfico. La audiencia a la que va dirigida el estudio se trata principalmente de los responsables de la Administración y Dirección de Tráfico de los Estados Unidos. Fijémonos que el control del tiempo en el que que el tráfico se ve afectado a causa de un accidente es uno de sus máximos intereses, puesto que, de esta forma, se podría informar debidamente a la ciudadanía y elaborar los correspondientes planes de mitigación para minimizar el posible impacto. Por tanto, a partir de este documento, la audiencia espera establecer los factores y dependencias que puedan afectar significativamente al tiempo de afectación en el tráfico provocado por un determinado accidente.  En particular, las cuestiones que se pretenden resolver, a través del mensaje facilitado en la siguiente sección con las distintas visualizaciones, son las siguientes:
+<h2> Metodología</h2>
+<h3> Elementos de la Visualización</h3>
+En la asignatura cursada de Minería de Datos, se estableció inicialmente el propósito de, a partir del uso de los datos adecuados, facilitar una herramienta y un conjunto de técnicas que permita a los responsables de Tráfico de los Estados Unidos informar correctamente del tiempo en el que el tráfico de una determinada zona se verá afectado u obstaculizado a causa de un accidente. De esta forma, en sincronía con lo indicado anteriormente, el objetivo principal de esta práctica es entender y visualizar de forma gráfica qué factores afectan y caracterizan al tiempo medio de afectación de una zona de los Estados Unidos derivado por los accidentes de tráfico. La audiencia a la que va dirigida el estudio se trata principalmente de los responsables de la Administración y Dirección de Tráfico de los Estados Unidos. Fijémonos que el control del tiempo en el que que el tráfico se ve afectado a causa de un accidente es uno de sus máximos intereses, puesto que, de esta forma, se podría informar debidamente a la ciudadanía y elaborar los correspondientes planes de mitigación para minimizar el posible impacto. Por tanto, a partir de este documento, la audiencia espera establecer los factores y dependencias que puedan afectar significativamente al tiempo de afectación en el tráfico provocado por un determinado accidente.  En particular, las cuestiones que se pretenden resolver a través del mensaje facilitado en la siguiente sección con las distintas visualizaciones, son las siguientes:
 <ol>
   <li><span class="negrita"> ¿En qué condados el tráfico se ve más tiempo obstaculizado a causa de los distintos accidentes? </li> </span>
   <li><span class="negrita">¿El tiempo de afectación medio en el tráfico provocado por los accidentes es constante en todo el año o hay épocas en las que crece significativamente? </span></li>
-  <li><span class="negrita"> ¿El tiempo de afectación del tráfico provocado por un accidente depende de algún otro factor distinto al espacio y el tiempo? </span></li>
+  <li><span class="negrita"> ¿El tiempo de afectación del tráfico provocado por un accidente depende de algún otro factor distinto al espacio y al tiempo? </span></li>
 </ol>
 
 
 <h3> Conjunto de datos consultados</h3>
-El científico Sobhan Moosavi, procedente de San Francisco, facilita un dataset que recoge la información de los accidentes de tráfico en 49 estados de los Estados Unidos desde febrero de 2016, tal y como se puede observar en la referencia (Moosavi). En particular, el archivo se puede consultar y descargar directamente de la referencia (“Kaggle, data-set US Accidents”). Se trata de un único CSV con nombre US_Accidents_Dec21_updated.csv, el cual contiene 2845342 registros de accidentes y 47 columnas. Sin embargo, tal y como se justificó en la práctica  de Minería de Datos, decidimos limitar el problema inicial a considerar únicamente los accidentes de tráfico producidos durante los años 2020 y 2021 en exclusivamente tres de los estados del país: DC (Washington D. C.), WV (Virginia Occidental) e IA (Iowa), además de realizar la correspondiente etapa de Preprocesado, Limpieza y Transformación de los datos. En adición, en referencia a esta actividad, solamente se tendrán únicamente  accidentes registrados en 2021, puesto que la mayoría de accidentes registrados se producieron en dicho año, tal y como se visualiza en el siguiente diagrama de sectores.
+El científico Sobhan Moosavi, procedente de San Francisco, facilita un dataset que recoge la información de los accidentes de tráfico en 49 estados de los Estados Unidos desde febrero de 2016, tal y como se puede observar en el enlace proporcionado al inicio de la actividad. En particular, se trata de un único CSV con nombre "US_Accidents_Dec21_updated.csv", el cual contiene 2845342 registros de accidentes y 47 columnas. Sin embargo, tal y como se justificó en la práctica  de Minería de Datos, decidimos limitar el problema inicial a considerar únicamente los accidentes de tráfico producidos durante los años 2020 y 2021 en exclusivamente tres de los estados del país: DC (Washington D. C.), WV (Virginia Occidental) e IA (Iowa), además de realizar la correspondiente etapa de Preprocesado, Limpieza y Transformación de los datos. El detalle del tratamiento y preprocesado realizado se adjunta al inicio de la práctica, en el enlace "Cuaderno de Google Colab de Minería de Datos", código con el que, a partir del fichero "US_Accidents_Dec21_updated.csv" (con una primera parte ejecutada en local, tal y como se explica en las primeras celdas), se generaría el fichero "US_Accidents_1_def.csv", el cual es el que se usa como base del cuaderno utilizado exclusivamente para esta práctica (enlace de "Cuaderno de Google Colab de la práctica"). En adición, en referencia a esta actividad, solamente se tendrán únicamente  accidentes registrados en 2021 (tal y como se detalla en "Cuaderno de Google Colab de la práctica"), puesto que la mayoría de accidentes registrados se producieron en dicho año. En este caso, decidimos representar un Pie Chart, pues al existir solamente dos únicas categorías estáticas (2020 y 2021), es una buena forma para visualizar gráficamente la cantidad de accidentes en cada año. 
 <br> 
 <br>
 <iframe width="600" height="450" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRkG0Wl2kiXfrSdZmH7ka8YZwqav5Tn8gi-H-WOpy9IblF6ho_kruKnMp80yb_lJES0dYkCcyOBSmrz/pubchart?oid=158291821&amp;format=interactive"></iframe>
@@ -52,14 +63,14 @@ Por otra parte, las características a considerar en esta actividad para cada ac
   <li>Tiempo de afectación en el tráfico, en minutos.</li>
   <li>Estado y condado en los que se ha producido el accidente.</li>
   <li>Mes en el que se ha producido el accidente.</li>
-  <li>Gravedad del accidente. Toma dos valores: leve y grave.</li>
+  <li>Gravedad del accidente. Toma dos valores en los datos considerados: leve (2) y grave (4).</li>
   <li>Distancia en metros de la zona afectada por el accidente.</li>
   <li>La humedad (en %), la sensación térmica (en Cº), la velocidad del viento (en km/h) y el rango de visibilidad (en metros) en la zona del accidente.</li>
   <li>Periodo del día del accidente (toma los valores "Día" o "Noche").</li>
-  <li>Variable  indica si se produjo el accidente en fin de semana o no (toma los valores "Sí" o "No").</li>
+  <li>Variable que indica si se produjo el accidente en fin de semana o no (toma los valores "Sí" o "No").</li>
 </ul>
 
-Fijémonos que hay que prestar especial atención en la variable del tiempo de afectación en el tráfico, puesto que se trata la que tomará el papel principal en la mayoría de visualizaciones. Con el uso del siguiente Boxplot sobre los accidentes considerados en 2021, podemos observar que existen una gran cantidad de outliers extremos. En un Boxplot, se muestra claramente en una caja el primer cuartil, la mediana y el tercer cuartil, así como el mínimo y máximo de las bisagras de Tukey (en una línea horizontal conectada a la caja), sin incluir los puntos más fuera de rango. De esta forma, notemos que en el siguiente gráfico se ve claramente la cantidad de outliers presentes (todos los puntos por encima del máximo de Tukey).
+Fijémonos que hay que prestar especial atención en la variable del tiempo de afectación en el tráfico, puesto que se trata la que tomará el papel principal en la mayoría de visualizaciones. Con el uso del siguiente Boxplot sobre los accidentes considerados en 2021, podemos observar que existen una gran cantidad de outliers extremos. En un Diagrama de cajas y bigotes, se muestra claramente en una caja el primer cuartil, la mediana y el tercer cuartil, así como el mínimo y máximo de las bisagras de Tukey (en una línea horizontal conectada a la caja), sin incluir los puntos más fuera de rango (los cuales son representados de forma independiente). Es decir, es una muy buena forma de graficar los outliers, motivo por el que hemos decidido hacer uso de dicho gráfico. De esta forma, notemos que en la siguiente imagen se ve claramente la cantidad de outliers presentes (todos los puntos por encima del máximo de Tukey).
 <br> 
 <br>
 <tr>
@@ -68,7 +79,7 @@ Fijémonos que hay que prestar especial atención en la variable del tiempo de a
 </tr>
 <br> 
 <br>
-Siguiendo la definición de anomalías del Test de Tukey, hemos considerado como outliers extremos los valores de tiempo superiores a 3 veces el rango intercuartil, decidiendo prescindir de ellos con la finalidad de visualizar de forma más eficiente todos los diferentes gráficos. Así pues, una vez prescindidos de dichos accidentes, el diagrama de cajas es el siguiente, del que se observa claramente la disminución de los outliers y la más correcta visualización de la distribución del tiempo de afectación en el tráfico.
+Siguiendo la definición de anomalías del Test de Tukey, hemos considerado como outliers extremos los valores de tiempo superiores a 3 veces el rango intercuartil, decidiendo prescindir de ellos con la finalidad de visualizar de forma más eficiente todos los diferentes gráficos. Así pues, una vez prescindidos de dichos accidentes, el diagrama de cajas y bigotes obtenido es el siguiente (se observa claramente la disminución de los outliers): 
 <br> 
 <br>
 <tr>
@@ -77,21 +88,22 @@ Siguiendo la definición de anomalías del Test de Tukey, hemos considerado como
 </tr>
 <br> 
 <br>
-Observemos que los outliers descartados se tratan de valores superiores a las 6 horas (más de 360 minutos), lo que corresponde a accidentes con características muy particulares que los Responsables de Tráfico ya tienen controlados y claramente contemplan que son de gran afectación, por lo que no son de vital interés en el estudio. Es decir, de existir un accidente con estas características tan específicas, los Responsables de Tráfico sabrían estimar con bastante exactitud su muy elevado y diferencial tiempo de afectación en el tráfico, por lo que quedarían fuera de los objetivos planteados. De esta forma, se consideran solo aquellos accidentes de 2021 que se pueden etiquetar como comunes, siendo justamente los que despiertan el interés de la audiencia y, por tanto, de los que más necesario es entender y visualizar qué factores afectan y caracterizan a su tiempo medio de afectación  
+Observemos que los outliers descartados se tratan de valores superiores a las 6 horas (más de 360 minutos), lo que corresponde a accidentes con características muy particulares que los Responsables de Tráfico ya tienen controlados y claramente contemplan que son de gran afectación, por lo que no son de vital interés en el estudio. Es decir, de existir un accidente con estas características tan específicas, los Responsables de Tráfico sabrían estimar con bastante exactitud su muy elevado y diferencial tiempo de afectación en el tráfico, por lo que quedarían fuera de los objetivos planteados. De esta forma, se consideran solo aquellos accidentes de 2021 que se pueden etiquetar como comunes, siendo justamente los que despiertan el interés de la audiencia y, por tanto, de los que más necesario es entender y visualizar qué factores afectan y caracterizan a su tiempo medio de afectación. Todo el detalle del procedimiento realizado, tanto con los outliers como con el filtrado previo de año, se puede consultar en "Cuaderno de Google Colab de la práctica".  
 <br>
 <br>
 Cabe mencionar que en la asignatura de Estadística Avanzada también se hizo uso del mismo dataset, aunque el objetivo planteado fue totalmente distinto: intentar aplicar las regresiones y modelos lineales correspondientes
-para predecir los valores faltantes de las columnas de humedad y periodo del día (como reemplazo y mejora de las técnicas de imputación de Missing Values realizada previamente en la asignatura de Minería Datos, que es la que se ha tomado como primera base de esta actividad).
+para predecir los valores faltantes de las columnas de humedad y periodo del día (como reemplazo y mejora de las técnicas de imputación de Missing Values realizada previamente en la asignatura de Minería Datos, que es la que se ha tomado como primera referencia de esta actividad).
 
-<h2> Visualizaciones</h2>
+<h2> Resultados</h2>
+Es importante indicar que, para obtener los correspondientes datos de cada uno de los gráficos que se mostrarán en esta sección, se han tenido que realizar diferentes operaciones (agrupaciones, selecciones, transformaciones...), las cuales se encuentran indicadas en el mismo "Cuaderno de Google Colab de la práctica".
 <h3> Distribución geográfica</h3>
 Recordemos que la primera pregunta que se pretende resolver es la siguiente: ¿en qué condados el tráfico se ve más tiempo obstaculizado a causa de los distintos accidentes?
 <br>
 <br>
-Aunque solamente dispongamos de la información en 3 estados, en realidad los accidentes se distribuyen en 140 condados diferentes, por lo que, al tratarse de zonas geolocalizadas, podemos visualizar un mapa en los que se muestre, para cada uno de los condados, el tiempo medio de afectación en el tráfico entre todos sus accidentes (los seleccionados en la actividad anterior, de 2021 y con la eliminación de los outliers). 
+Aunque solamente dispongamos de la información en 3 estados, en realidad los accidentes se distribuyen en 140 condados diferentes, por lo que, al tratarse de zonas geolocalizadas con áreas claramente diferenciadas, podemos plantear un mapa coroplético en el que se muestre, para cada uno de los condados, el tiempo medio de afectación en el tráfico entre todos sus accidentes (los seleccionados en la actividad anterior, de 2021 y con la eliminación de los outliers). Fijémonos que al tratarse del tiempo medio por accidente, no hay problema en mostrarlo por cada uno de los condados, puesto que no depende directamente del número de población (y el número de accidentes), datos que distorsionarían los resultados obtenidos claramente de incorporarse en el mapa. Es decir, la información sí estaría normalizada y podría plasmarse sin problema alguno en el mapa coroplético. 
 <br>
 <br>
-<iframe title="Afectación de los accidentes en el tráfico" aria-label="Mapa" id="datawrapper-chart-2IVPB" src="https://datawrapper.dwcdn.net/2IVPB/1/" scrolling="no" frameborder="0" style="width:0; min-width: 80% !important; border: none;" height="450" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+<iframe title="Afectación de los accidentes en el tráfico" aria-label="Mapa" id="datawrapper-chart-2IVPB" src="https://datawrapper.dwcdn.net/2IVPB/1/" scrolling="no" frameborder="0" style="width:0; min-width: 100% !important; border: none;" height="450" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
 </script>
 <br>
 <br>
@@ -110,20 +122,20 @@ Para resolver la segunda cuestión planteada, nos marcamos dos mensajes diferent
 Respecto al primer mensaje, al pretender visualizar la tendencia del tiempo de afectación alrededor del año 2021, lo ideal es hacer uso de un gráfico de Líneas. Así pues, para cada uno de los 12 meses y para cada estado (de esta forma además de la diferencia en el 2021 podemos visualizar el comportamiento temporal en cada uno de los estados), hemos considerado el tiempo medio de afectación en el tráfico de todos los correspondientes accidentes, de forma que hemos obtenido tres series temporales que derivan en las siguientes 3 líneas del siguiente Line Graph. 
 <br>
 <br>
-  <iframe title="Afectación de los accidentes de tráfico" aria-label="Interactive line chart" id="datawrapper-chart-b4Ubi" src="https://datawrapper.dwcdn.net/b4Ubi/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 60% !important; border: none;" height="450" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+  <iframe title="Afectación de los accidentes de tráfico" aria-label="Interactive line chart" id="datawrapper-chart-b4Ubi" src="https://datawrapper.dwcdn.net/b4Ubi/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="450" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
   </script>
 <br>
 <br>
-Fijémonos que, de forma general, se ve claramente que la tendencia del tiempo medio de afectación en el tráfico decrece en las 3 series temporales, para cada uno de los 3 estados, sobre todo a partir de mayo. Además, en todos los meses de año, en Iowa el tiempo medio de afectación es superior en comparación a los demás estados (reafirmando lo comentado del mapa anterior). 
+Fijémonos que, de forma general, se ve claramente que la tendencia del tiempo medio de afectación en el tráfico decrece en las 3 series temporales, para cada uno de los 3 estados, sobre todo a partir de mayo. Además, en todos los meses de año, en Virginia Occidental el tiempo medio de afectación es superior en comparación a los demás estados (reafirmando lo comentado del mapa anterior). 
 <br>
 <br>
-Ahora bien, aunque con el Line Graph se pueda observar de forma clara la tendencia decreciente de cada serie a lo largo de los meses, nos interesa visualizar de forma más clara la comparativa entre las distintas estaciones, motivo por el cual, considerando el tiempo medio de afectación en el tráfico por cada uno de los 4 trimestres y por cada estado,hemos usado un Gráfico de columnas, ya que, al disponer solamente de 4 trimesstres, es la mejor herramienta en caso de representar comparaciones entre los distintos trimestres para cada estado. 
+Ahora bien, aunque con el Line Graph se pueda observar de forma clara la tendencia decreciente de cada serie a lo largo de los meses, nos interesa visualizar de forma más evidente la comparativa entre las distintas estaciones, motivo por el cual, considerando el tiempo medio de afectación en el tráfico por cada uno de los 4 trimestres y por cada estado, hemos usado un Gráfico de columnas, ya que, al disponer solamente de 4 trimestres, consideramos que es la mejor herramienta en caso de representar comparaciones entre los distintos trimestres para cada uno de los estado. 
 <br>
 <br>
 <iframe width="550" height="450" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpw_gVijSKnbMUcS41MDsQ6WA-IaY47Hx3fAmsqxdio47MusYY090JkdCNhFesurR7kM5RiMR4Xalp/pubchart?oid=18865328&format=interactive"></iframe>
 <br>
 <br>
-Observemos que en los dos primeros trimestres del año (invierno y primavera) el tiempo medio de afectación en el tráfico provocado por los accidentes es muy similar en general, aunque sí diferenciamos por estado sí parece variar una ligera cantidad (crece un poco en Iowa y Washington D.C. y decrece en Virgnia y Occidental.) Sin embargo, tanto en el tercer trimestre como en el cuarto trimestres (verano y otoño), y en cada uno de los estados, se ve claramente que el tiempo medio de afectación en el tráfico decrece. En resumen, mientras que en invierno y primavera parece no haber diferencias (en general) substanciales entre el tiempo medio de afectación en el tráfico, en verano sí disminuyen de forma clara, al igual que en otoño, llegando a los mínimos registros en los 3 estados.
+Observemos que en los dos primeros trimestres del año (invierno y primavera) el tiempo medio de afectación en el tráfico provocado por los accidentes es muy similar en general, aunque sí diferenciamos por estado sí parece variar una ligera cantidad (crece un poco en Iowa y Virgnia y Occidental y decrece en Washington D.C.). Sin embargo, tanto en el tercer trimestre como en el cuarto trimestre (verano y otoño), y en cada uno de los estados, se ve claramente que el tiempo medio de afectación en el tráfico decrece. En resumen, mientras que en invierno y primavera parece no haber diferencias (en general) substanciales entre el tiempo medio de afectación en el tráfico, en verano sí disminuyen de forma clara, al igual que en otoño, llegando a los mínimos registros en los 3 estados.
 <br>
 <br>
 En conclusión, existe una clara tendencia y diferenciación del tiempo medio de afectación en el tráfico para cada uno de los estados en los diferentes meses y estaciones del año, por lo que, al igual que la geolocalización, estos parecen ser atributos a tener en cuenta por los responsables de la Administración y Dirección de Tráfico a la hora de actuar ante nuevos accidentes e informar a la ciudadanía de la previsión de afectación en el tránsito. 
@@ -131,7 +143,7 @@ En conclusión, existe una clara tendencia y diferenciación del tiempo medio de
 Ya hemos visto la dclara influencia de la localización y de la estación del año en el tiempo medio de afectación en el tráfico a causa de los accidentes. No obstante, en esta sección nos planteamos si este también se ve caracterizado por otras características distintas. 
 <br>
 <br>
-En primer lugar, estudiamos si la gravedad del accidente es un factor que tiene influencia sobre el tiempo medio de afectación en el tráfico. Para visualizar estas diferencias entre ambas categorías, teniendo en cuenta todos los accidentes (sin agregarlos como en las anteriores secciones), pintamos en un mismo gráfico dos Diagramas de Cajas distintos: uno para los accidentes leves y otro para los graves (al igual que habíamos usado para visualziar los outliers), de forma que podamos ver ambas distribuciones en los tiempos medios de afectación en el tráfico (en minutos). 
+En primer lugar, estudiamos si la gravedad del accidente es un factor que tiene influencia sobre el tiempo medio de afectación en el tráfico. Para visualizar estas diferencias entre ambas categorías, teniendo en cuenta todos los accidentes (sin agregarlos como en las anteriores secciones), pintamos en un mismo gráfico dos Diagramas de Cajas distintos: uno para los accidentes leves y otro para los graves (al igual que habíamos usado para visualizar los outliers), de forma que podamos ver ambas distribuciones en los tiempos medios de afectación en el tráfico (en minutos). Hemos escogido realizar un Diagrama de cajas por categoría para visualizar la diferencia entre los distintos valores estadísticos de cada una, como los mínimos o máximos, ya que para tal finalidad este es el gráfico ideal. 
 <br>
 <br>
 <div id="viz1"></div>
@@ -140,7 +152,7 @@ En primer lugar, estudiamos si la gravedad del accidente es un factor que tiene 
 En este caso, podemos observar que el primer cuartil, la mediana, el tercer cuartil y el máximo de las bisagras de Tukey (sin considerar los puntos más influyentes) son muy similares en los dos diagramas, no apreciando diferencias significativas entre los accidentes leves y los graves. Sin embargo, si nos fijamos en los mínimos, en los accidentes graves está cerca de 65 minutos, mientras que en los leves en 6. Es decir, en los accidentes graves, el tiempo de afectación es de al menos una hora, mientras que en los leves existen accidentes cuya implicación en el tráfico no llega a los 10 minutos. 
 <br>
 <br>
-A continuación, pretendemos determinar si las demás variables contínuas consideradas (distancia, humedad, sensación térmica, visibilidad y velocidad del viento) están relacionadas o no con el tiempo de afectación en el tráfico derivado de los accientes. Teniendo en cuenta todos los accidentes de nuevo, visualizamos el siguiente mapa de correlaciones para determinar su correlación con el tiempo de afectación. Fijémonos, que solamente tenemos que fijarnos en la última fila o última columna del mapa, al tratarse estas de las que muestran la correlación entre el tiempo de afectación y las demás variables contínuas. 
+A continuación, pretendemos determinar si las demás variables contínuas consideradas (distancia, humedad, sensación térmica, visibilidad y velocidad del viento) están relacionadas o no con el tiempo de afectación en el tráfico derivado de los accientes. Teniendo en cuenta todos los accidentes de nuevo, visualizamos el siguiente mapa de correlaciones para determinar su correlación con el tiempo de afectación. Fijémonos que solamente tenemos que fijarnos en la última fila o última columna del mapa, al tratarse estas de las que muestran la correlación entre el tiempo de afectación y las demás variables contínuas. 
 <br>
 <br>
 <tr>
@@ -148,29 +160,29 @@ A continuación, pretendemos determinar si las demás variables contínuas consi
 </tr>
 <br>
 <br>
-Se puede observar claramente que ninguna de las características tienen una correlación muy significativa con el tiempo de afectación. Si consideramos la distancia, la cual es la que más alta correlación tiene con el tiempo de afectación, y dibujamos un ScatterPlot con el tiempo para ver su relación (al ser ambas variables contínuas es el gráfico ideal a considerar), obtenemos el siguiente resultado:
+Se puede observar claramente que ninguna de las características tiene una correlación muy significativa con el tiempo de afectación. Si consideramos la distancia, la cual es la que más alta correlación tiene con el tiempo de afectación (alrededor de 0.08), y dibujamos un Scatter Plot con el tiempo para ver su relación (al ser ambas variables contínuas es el gráfico ideal a considerar para determinar dicha relación), obtenemos el siguiente resultado:
 <br>
 <br>
   <tr>
-    <td style="width: 550px; height: 450px;"><img src= https://github.com/RamonRossello/08MBID---Visualizacion-de-Datos/blob/main/TiempoDistancia.png?raw=true> </td>
+    <td style="width: 550px; height: 450px;"><img src= https://github.com/RamonRossello/08MBID---Visualizacion-de-Datos/blob/main/TiempoDistancia.png?raw=true > </td>
   </tr>
 <br>
 <br>
-Notemos que, para valores muy altos de distancia, sí que parece que el tiempo medio de afectación en el tráfico es en general mayor, tal y como se puede ver con la recta dibujada que muestra la tendencia lineal. Sin embargo, para distancias de zonas afectadas menores de 10 km (la gran mayoría de los accidentes), aunque también este presente una mínima relación lineal positiva, no se distingue en el gráfico ninguna tendencia lineal muy evidente, mostrándose una nube puntos en el diferente rango del tiempo de afectación. Es decir, respecto a la distancia de la zona de afectación, parece existir una existente correlación lineal positiva con el tiempo de afectación de los accidentes, sobre todo con valores muy altos. Respecto al resto de variables contínuas, determinamos que no existe ninguna relación destacable a visualizar al ser tan próxima a 0 su correlación obtenida. 
+Notemos que, para valores muy altos de distancia, sí que parece que el tiempo medio de afectación en el tráfico es en general mayor, tal y como se puede ver con la recta dibujada que muestra la tendencia lineal. Sin embargo, para distancias de zonas afectadas menores de 10 km (la gran mayoría de los accidentes), aunque también este presente una mínima relación lineal positiva, no se distingue en el gráfico ninguna tendencia  muy evidente, mostrándose una nube puntos en el diferente rango del tiempo de afectación. Es decir, respecto a la distancia de la zona de afectación, parece existir una existente correlación lineal positiva con el tiempo de afectación de los accidentes, sobre todo con valores muy altos. Respecto al resto de variables contínuas, determinamos que no existe ninguna relación destacable a visualizar al ser tan próxima a 0 su correlación obtenida (en todas las demás la correlación, en valor absoluto, es menor de 0.03). 
 <br>
 <br>
-Finalmente, pretendemos deducir si el periodo del día (día o noche) o el hecho de que sea fin de semana o no, son características que tienen influencia sobre el tiempo medio de afectación en el tráfico. Para visualizar estas diferencias, teniendo en cuenta de juevo todos los accidentes, pintamos en un mismo gráfico cuatro Diagramas de Cajas distintos: uno para combinación de ambas categorías: "Día-Fin de semana", "Día - No fin de semana", "Noche-Fin de semana" y "Noche - No fin de semana", al igual que hemos realizado anteriormente para ver la relación con la gravedad del accidente. De esta forma, podemos ver las cuatro distribuciones en los tiempos medios de afectación en el tráfico (en minutos), así como establecer si existen o no diferencias a considerar. 
+Finalmente, pretendemos deducir si el periodo del día (día o noche) o el hecho de que sea fin de semana o no, son características que tienen influencia sobre el tiempo medio de afectación en el tráfico. Para visualizar estas diferencias, teniendo en cuenta de nuevo todos los accidentes, pintamos en un mismo gráfico cuatro Diagramas de Cajas distintos: uno para combinación de ambas categorías: "Día-Fin de semana", "Día - No fin de semana", "Noche-Fin de semana" y "Noche - No fin de semana", al igual que hemos realizado anteriormente para ver la relación con la gravedad del accidente. De esta forma, podemos ver las cuatro distribuciones en los tiempos medios de afectación en el tráfico (en minutos), así como establecer si existen o no diferencias a considerar, comparando los valores estadísticos, de igual forma que hemos determinado con la gravedad del accidente (al ser la misma finalidad, volvemos a repetir el mismo tipo de gráfico). 
 <br>
 <br>
 <tr>
-  <td style="width: 550px; height: 450px;"><img src= https://github.com/RamonRossello/08MBID---Visualizacion-de-Datos/blob/main/Weekend_Sunrise.png?raw=true> </td>
+  <td style="width: 550px; height: 450px;"><img src=https://github.com/RamonRossello/08MBID---Visualizacion-de-Datos/blob/main/FindePeriodo.png?raw=true ></td>
 </tr>
 <br>
 <br>
 Fijémonos que las cuatro cajas (formadas por el primer cuartil, la mediana y el tercer cuartil) se sitúan de forma muy parecida en cada caso, aunque parece que, en caso de ser fin de semana, la mediana y el tercer cuartil de los tiempos de afectación son timídamente menores, al igual que los máximos de las bisagras de Tukey, adando a entender que en caso de ser fin de semana, el tiempo medio de afectación es ligeramente inferior (aunque son diferencias prácticamente insignifactivas). De igual forma, en caso de producirse de noche, también parece que los tiempos medios de afectación son suavemente menores en comparación a los que se producen de día. Sin embargo, ninguna de estas diferencias se presenta de forma clara, por lo que deducimos que no son factores que tengan una afectación destacable en el tiempo medio de afectación en el tráfico provocado por un accidente. 
 <br>
 <br>
-En definitiva, mediante la visualización de los diferentes gráficos hemos visto que la gravedad del accidente influye notablemente en el tiempo mínimo de afectación en el tráfico provocado por un accidente y la distancia de la zona afectada también presenta una suave correlación lineal positiva con el tiempo de afectación (sobre todo a valores muy altos), por lo que serían atributos a considerar por los responsables de la Administración y Dirección de Tráfico a la hora de actuar ante nuevos accidentes. Por otro lado, las demás variables contínuas (humedad, sensación térmica, visibilidad y velicidad del viento), el periodo del día o el hecho de que sea fin de semana no están estrechamente relacionadas con el tiempo de afectación de los accidentes, por lo que no serían características de las que nuestra audiencia debería tomar conciencia. 
+En definitiva, mediante la visualización de los diferentes gráficos hemos visto que la gravedad del accidente influye notablemente en el tiempo mínimo de afectación en el tráfico provocado por un accidente. Además,  la distancia de la zona afectada también presenta una suave correlación lineal positiva con el tiempo de afectación (sobre todo a valores muy altos), por lo que ambos serían atributos a considerar por los responsables de la Administración y Dirección de Tráfico a la hora de actuar ante nuevos accidentes. Por otro lado, las demás variables contínuas (humedad, sensación térmica, visibilidad y velicidad del viento), el periodo del día o el hecho de que sea fin de semana no están estrechamente relacionadas con el tiempo de afectación de los accidentes, por lo que no serían características de las que nuestra audiencia debería tomar conciencia. 
 <h2> Conclusiones</h2>
 Con todas las visualizaciones realziadas en la práctica, se ha podido establecer de forma clara los factores que más afectan al tiempo medio de afectación de una zona de tráfico provocado por un accidente en DC (Washington D. C.), WV (Virginia Occidental) e IA (Iowa) a lo largo de 2021 con condiciones "comunes", de forma que deberían ser factores a tener en cuenta por los Responsables de la Administración y Dirección de Tráfico de los Estados Unidos a la hora de estimar el tiempo de afectación en el tráfico de un determinado accidente e informar a la sociedad. El resumen de dichos atributos son los siguientes: 
 <ul>
@@ -184,15 +196,23 @@ Por otra parte, otros atributos como la humedad, la sensación térmica, la visi
 <h2> Gráficos empleados</h2>
 <span class="negrita">Google SpreadSheet</span>: programa de hoja de cálculo incluido como parte del paquete gratuito de editores de documentos de Google basado en la web que ofrece Google. Se ha usado para el diseño de los  siguientes gráficos.
 <ul>
-  <li>El primer gráfico de sectores que muestra la distribución de los accidentes por cada año.</li>
-  <li>El gráfico de columnas que muestra la evolución del tiempo medio de afectación a causa de un accidente a lo largo de los 4 trimestres y diferenciado por estado</li>
+  <li>El primer gráfico de sectores que muestra la distribución de los accidentes por cada año: <a href="https://docs.google.com/spreadsheets/d/1WAdmTjRjXkKfFiZg5VX2ATIU928kcimO9sZwv47wEz4/edit?usp=sharing" target="_blank">
+    https://docs.google.com/spreadsheets/d/1WAdmTjRjXkKfFiZg5VX2ATIU928kcimO9sZwv47wEz4/edit?usp=sharing
+  </a></li>
+  <li>El gráfico de columnas que muestra la evolución del tiempo medio de afectación a causa de un accidente a lo largo de los 4 trimestres y diferenciado por estado: <a href="https://docs.google.com/spreadsheets/d/1Ssv_qE21wEfWqKDcJr0tn_1RIoSQYHmCfKT8ueXPuyg/edit?usp=sharing" target="_blank">
+    https://docs.google.com/spreadsheets/d/1Ssv_qE21wEfWqKDcJr0tn_1RIoSQYHmCfKT8ueXPuyg/edit?usp=sharing
+  </a></li>
 </ul>
 <span class="negrita">Data Wrapper</span>: plataforma orientada a la edición de gráficas con ciertas limitaciones. Se ha usado para el diseño de los  siguientes gráficos.
 <ul>
-  <li>El mapa que muestra la división de los accidentes por condado.</li>
-  <li>El gráfico de líneas que muestra la evolución del tiempo medio de afectación a causa de un accidente a lo largo de los meses y diferenciado por estado (3 líneas)</li>
+  <li>El mapa que muestra la división de los accidentes por condado: <a href="https://datawrapper.dwcdn.net/2IVPB/10/" target="_blank">
+    https://datawrapper.dwcdn.net/2IVPB/10/
+  </a></li>
+  <li>El gráfico de líneas que muestra la evolución del tiempo medio de afectación a causa de un accidente a lo largo de los meses y diferenciado por estado (3 líneas): <a href="https://datawrapper.dwcdn.net/b4Ubi/3/" target="_blank">
+    https://datawrapper.dwcdn.net/b4Ubi/3/
+  </a></li>
 </ul>
-<span class="negrita">Google Colab Python</span>: es un producto de Google Research que permite a cualquier usuario escribir y ejecutar código arbitrario de Python en el navegador. Se ha usado tanto para realizar los correspondientes tratamientos y procesos en el data set que han permitido su descraga y visualización en otras herramientas como para mostrar los gráficos siguientes.
+<span class="negrita">Google Colab Python</span>: es un producto de Google Research que permite a cualquier usuario escribir y ejecutar código arbitrario de Python en el navegador. Se ha usado tanto para realizar los correspondientes tratamientos y procesos en el data set que han permitido su descraga y visualización en otras herramientas como para mostrar los gráficos siguientes: (todos ellos se encuentran en el enlace del "Cuaderno de Google Colab de la práctica").
 <ul>
   <li>Los dos Diagramas de caja mostrados para el tiempo medio de afectación para visualizar sus outliers.</li>
   <li>El mapa de correlaciones entre las variables contínuas y el tiempo medio de afectación, así como el ScatterPlot entre la distancia y el tiempo de afectación de un accidente. </li>
@@ -201,7 +221,7 @@ Por otra parte, otros atributos como la humedad, la sensación térmica, la visi
 <span class="negrita">D3Plus</span>: herramienta especialmente diseñada para trabajar con datos dinámicos o
 visualizaciones interactivas desde Stackblitz. Se ha usado para el diseño de los  siguientes gráficos.
 <ul>
-  <li>El diagrama de cajas correspondiente a la distribución del tiempo de afectación de los accidentes dividido por la gravedad.</li>
+  <li>El diagrama de cajas correspondiente a la distribución del tiempo de afectación de los accidentes dividido por la gravedad. Se ha añadido en el mismo código de Stackblitz siguiendo las directrices de la Actividad Guiada 3 expuesta en clase. </li>
 </ul>
 
 </div>
