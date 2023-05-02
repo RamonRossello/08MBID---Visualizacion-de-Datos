@@ -5,7 +5,7 @@
   </head>
 
 <div id="app">
-  <span class="negrita">Nombre:</span> Ramon Rossello
+  <span class="negrita">Nombre:</span> Ramón Rosselló Cifre
   <br />
   <span class="negrita">URL:</span> 
     <a href="https://js-vcyoqy.stackblitz.io" target="_blank">
@@ -60,6 +60,7 @@ El científico Sobhan Moosavi, procedente de San Francisco, facilita un dataset 
 <br>
 Por otra parte, las características a considerar en esta actividad para cada accidente registrado son las siguientes: 
 <ul>
+  <li>Identificador del accidente, ya que aparece en algún gráfico (formato texto).</li>
   <li>Tiempo de afectación en el tráfico, en minutos.</li>
   <li>Estado y condado en los que se ha producido el accidente.</li>
   <li>Mes en el que se ha producido el accidente.</li>
@@ -101,6 +102,9 @@ Recordemos que la primera pregunta que se pretende resolver es la siguiente: ¿e
 <br>
 <br>
 Aunque solamente dispongamos de la información en 3 estados, en realidad los accidentes se distribuyen en 140 condados diferentes, por lo que, al tratarse de zonas geolocalizadas con áreas claramente diferenciadas, podemos plantear un mapa coroplético en el que se muestre, para cada uno de los condados, el tiempo medio de afectación en el tráfico entre todos sus accidentes (los seleccionados en la actividad anterior, de 2021 y con la eliminación de los outliers). Fijémonos que al tratarse del tiempo medio por accidente, no hay problema en mostrarlo por cada uno de los condados, puesto que no depende directamente del número de población (y el número de accidentes), datos que distorsionarían los resultados obtenidos claramente de incorporarse en el mapa. Es decir, la información sí estaría normalizada y podría plasmarse sin problema alguno en el mapa coroplético. 
+<br>
+<br>
+<span class="negrita">Observación: el mapa no se puede visualizar correctamente desde el documento PDF, por lo que es necesario acceder a la URL de stackblitz.io. Sin embargo, se añade también al final de la práctica en un Anexo.</span> 
 <br>
 <br>
 <iframe title="Afectación de los accidentes en el tráfico" aria-label="Mapa" id="datawrapper-chart-2IVPB" src="https://datawrapper.dwcdn.net/2IVPB/1/" scrolling="no" frameborder="0" style="width:0; min-width: 100% !important; border: none;" height="450" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
