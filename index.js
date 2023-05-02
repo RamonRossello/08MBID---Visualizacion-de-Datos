@@ -15,7 +15,7 @@ var visualization = d3plus.viz()
 .y("value")
 .draw()
 
-d3.json("https://raw.githubusercontent.com/RamonRossello/08MBID---Visualizacion-de-Datos/RamonRossello-text/Prova", function(data) {
+d3.json("https://raw.githubusercontent.com/raul27868/07MBIG-Visualizacion-Actividades-Guiadas/master/columnas.json", function(data) {
 var visualization = d3plus.viz()
 .container("#viz2")
 .data(data)
